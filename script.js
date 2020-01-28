@@ -30,7 +30,10 @@ searchCity = () => {
   const city = document.getElementById('city-input').value;
   // CODE GOES HERE
    getWeatherData(city)
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data)
+      showWeatherData(data)
+    })
     .catch(error => console.log(error))
 }
 
@@ -40,6 +43,11 @@ searchCity = () => {
  */
 showWeatherData = (weatherData) => {
   //CODE GOES HERE
-  
+  let {name, weather, main} = weatherData;
+  document.querySelector("#city-name").innerHTML = name;
+  document.querySelector("#weather-type").innerHTML = weather[0].main;
+  document.querySelector("#temp").innerHTML = main.temp;
+  document.querySelector("#min-temp").innerHTML = main.temp_min;
+  document.querySelector("#max-temp").innerHTML = main.temp_max;
 }
 
