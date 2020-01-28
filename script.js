@@ -1,7 +1,7 @@
 /**
  * Weather App
- * TODO: Complete getWeatherData() to return json response Promise
- * TODO: Complete searchCity() to get user input and get data using getWeatherData()
+ * Done: Complete getWeatherData() to return json response Promise
+ * Done: Complete searchCity() to get user input and get data using getWeatherData()
  * TODO: Complete showWeatherData() to set the data in the the html file from response
  */
 
@@ -29,7 +29,9 @@ getWeatherData = (city) => {
 searchCity = () => {
   const city = document.getElementById('city-input').value;
   // CODE GOES HERE
-
+   getWeatherData(city)
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
 }
 
 /**
